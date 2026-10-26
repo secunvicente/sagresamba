@@ -1,5 +1,5 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SagreSamba Percussió · Assajos</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=3"></head><body>
+<title>SagreSamba Percussió · Assajos</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=5"></head><body>
 <header class="hero"><div class="stripes"></div><nav><span class="logo">SAGRE<b>SAMBA</b></span><div><a href="#ritmes">Ritmes</a><a href="#coros">Coros</a></div></nav>
 <div class="hero-in"><p class="kicker">Drac, Diables i Gegants de la Sagrera</p><h1>SagreSamba Percussió<span>· Assajos ·</span></h1><p class="lead">Vídeos cortos de ensayo para aprender los ritmos, los cortes y los coros. Dale al play, baja la velocidad y ¡a tocar!</p>
 <div class="cta"><a class="btn" href="#ritmes">Ver ritmos</a><a class="btn ghost" href="#coros">Ver coros</a></div></div></header>
@@ -17,4 +17,4 @@ document.querySelectorAll('[data-id]').forEach(e=>e.onclick=()=>open_(e.dataset.
 document.getElementById('close').onclick=m.onclick=e=>{if(e.target===m||e.currentTarget.id==='close'){m.hidden=true;f.src=''}};
 document.getElementById('q').oninput=e=>{const q=e.target.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');let n=0;
 document.querySelectorAll('[data-name]').forEach(el=>{const ok=el.dataset.name.normalize('NFD').replace(/[\u0300-\u036f]/g,'').includes(q);el.hidden=!ok;n+=ok});document.getElementById('none').hidden=n>0};
-</script></body></html>
+</script><script src="mascota.js?v=5" defer></script></body></html>

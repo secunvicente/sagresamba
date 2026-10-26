@@ -34,3 +34,8 @@ h2{font-size:3rem;margin-top:2rem;border-bottom:6px solid var(--r);display:inlin
 #close{position:absolute;top:-2.6rem;right:0;background:var(--y);border:0;border-radius:50%;width:2.2rem;height:2.2rem;font-weight:800;cursor:pointer}
 footer{margin-top:4rem;background:var(--k);color:#fff;text-align:center;padding:2rem 1rem;border-top:8px solid var(--y)}
 [hidden]{display:none!important}
+#modal{background:#000;padding:0}
+.mbox{width:min(900px,100%)}
+#close{top:.6rem;right:.6rem;z-index:2}
+.frame{padding-top:3.2rem}
+@media (max-width:700px){.frame{aspect-ratio:auto;height:70vh}}

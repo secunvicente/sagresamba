@@ -11,13 +11,25 @@ var SVG='<svg viewBox="0 0 120 175" aria-hidden="true">'+
 '<g class="arm al"><path d="M38 104 Q28 112 42 104" stroke="#d92f2a" stroke-width="0"/><path d="M37 103 L30 96" stroke="#efc09e" stroke-width="6" stroke-linecap="round"/><path d="M30 96 L52 104" stroke="#7a4a22" stroke-width="3" stroke-linecap="round"/></g>'+
 '<g class="arm ar"><path d="M83 103 L90 96" stroke="#efc09e" stroke-width="6" stroke-linecap="round"/><path d="M90 96 L68 104" stroke="#7a4a22" stroke-width="3" stroke-linecap="round"/></g>'+
 '</svg>';
-var roles=[['walk','#ritmes','bottom'],['peek','#ritmes .grid','right'],['drum','.hero','br'],['sit','#coros h2','title'],['peek','.tip','left'],['walk2','#coros','bottom']];
-var n=innerWidth<600?3:roles.length;
-roles.slice(0,n).forEach(function(r,i){
+var mob=innerWidth<600;
+// anclados a elementos
+var roles=mob?[['drum','.hero','br'],['sit','#coros h2','title']]:[['drum','.hero','br'],['peek','#ritmes .grid','right'],['sit','#coros h2','title'],['peek','.tip','left']];
+roles.forEach(function(r,i){
  var host=document.querySelector(r[1]);if(!host)return;
  if(getComputedStyle(host).position==='static')host.style.position='relative';
  var m=document.createElement('div');m.className='mascota m-'+r[0]+' at-'+r[2];m.innerHTML=SVG;
- m.style.setProperty('--d',(i*0.13)+'s');host.appendChild(m);
+ m.style.setProperty('--d',(i*0.17)+'s');host.appendChild(m);
+});
+// capa a lo largo de toda la página: [tipo, top %, duración s, retraso s]
+var free=mob?[['walk',22,20,-3],['edgeL',40,6,-1],['walk2',55,24,-11],['edgeR',72,7,-4],['walk',88,18,-8]]
+ :[['walk',18,24,-2],['edgeR',28,6,-1],['walk2',38,30,-14],['edgeL',47,7,-3],['walk',58,26,-9],['edgeR',68,6.5,-2],['walk2',78,22,-6],['edgeL',88,8,-5]];
+document.body.style.position='relative';
+var L=document.createElement('div');L.className='m-layer';document.body.appendChild(L);
+free.forEach(function(f,i){
+ var m=document.createElement('div');m.className='mascota m-'+f[0]+(f[0].indexOf('walk')===0?' at-lane':'');
+ m.innerHTML=SVG;m.style.top=f[1]+'%';
+ m.style.animationDuration=f[2]+'s';m.style.animationDelay=f[3]+'s';
+ m.style.setProperty('--d',(-(i*0.11+0.05))+'s');L.appendChild(m);
 });
 if(R)document.documentElement.classList.add('m-still');
 })();

@@ -61,6 +61,13 @@ footer{margin-top:4rem;background:var(--k);color:#fff;text-align:center;padding:
 .at-br{right:4%;bottom:10px;width:90px;height:132px}
 .at-title{top:-58px;left:150px}.at-title .leg{transform:rotate(-70deg)}
 @media (max-width:600px){.mascota{width:72px;height:105px}.at-br{width:80px;height:117px;right:2%}.at-right{right:-14px}.at-title{left:110px;top:-80px}}
+.m-layer{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:3}
+.at-lane{left:0;animation:cross 24s linear infinite}
+.at-lane.m-walk2{animation-name:cross2}
+.m-edgeL{left:-34px;animation:edgel 6s ease-in-out infinite}.m-edgeL svg{transform:rotate(18deg)}
+.m-edgeR{right:-34px;animation:edger 6s ease-in-out infinite}.m-edgeR svg{transform:scaleX(-1) rotate(18deg)}
+@keyframes edgel{0%,100%{transform:translateX(-70px)}30%,70%{transform:none}}
+@keyframes edger{0%,100%{transform:translateX(70px)}30%,70%{transform:none}}
 .m-still .mascota,.m-still .mascota *{animation:none!important}
-@media (prefers-reduced-motion:reduce){.mascota,.mascota *{animation:none!important}.at-bottom{left:8px}}
+@media (prefers-reduced-motion:reduce){.mascota,.mascota *{animation:none!important}.at-bottom,.at-lane{left:8px}.m-walk2.at-lane{left:auto;right:8px}.m-edgeL,.m-edgeR{transform:none}}
 html,body{overflow-x:clip}

@@ -71,3 +71,28 @@ footer{margin-top:4rem;background:var(--k);color:#fff;text-align:center;padding:
 .m-still .mascota,.m-still .mascota *{animation:none!important}
 @media (prefers-reduced-motion:reduce){.mascota,.mascota *{animation:none!important}.at-bottom,.at-lane{left:8px}.m-walk2.at-lane{left:auto;right:8px}.m-edgeL,.m-edgeR{transform:none}}
 html,body{overflow-x:clip}
+
+/* reacciones al tocar */
+.mascota .m-in{position:relative;width:100%;height:100%}
+.mascota .hit{pointer-events:fill;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.mascota.m-busy{z-index:20}.mascota.m-busy .hit{cursor:default}
+.mascota .sleepy,.mascota .zzz{display:none}
+.m-fuma .sleepy{display:inline}.m-fuma .zzz{display:block}
+.m-fuma .arm,.m-fuma .head,.m-fuma .leg{animation:none!important}
+.m-fuma .al{transform:rotate(30deg)}.m-fuma .ar{transform:rotate(-30deg)}
+.m-fuma .leg{transform:rotate(-70deg)}
+.mascota .puff{transform-box:fill-box;transform-origin:50% 50%;opacity:0;animation:puff 2.4s ease-out infinite}
+.mascota .p2{animation-delay:.8s}.mascota .p3{animation-delay:1.6s}
+@keyframes puff{0%{transform:translate(0,0) scale(.5);opacity:1}100%{transform:translate(-5px,-38px) scale(2.8);opacity:0}}
+.zzz{position:absolute;right:10px;top:-2px;font:800 15px/1 Inter,sans-serif;color:#fff;pointer-events:none}
+.zzz i{position:absolute;font-style:normal;opacity:0;text-shadow:0 0 2px #1f1712,1px 1px 0 #1f1712;animation:zz 2.7s ease-out infinite}
+.zzz i:nth-child(2){animation-delay:.9s;font-size:12px}.zzz i:nth-child(3){animation-delay:1.8s;font-size:19px}
+@keyframes zz{0%{transform:translate(0,10px);opacity:0}20%{opacity:1}100%{transform:translate(8px,-20px);opacity:0}}
+.m-run .leg{animation:step .14s ease-in-out infinite!important}.m-run .lr{animation-direction:reverse!important}
+.m-run .al{animation-duration:.12s!important}.m-run .ar{animation-duration:.12s!important}
+.m-burst{position:absolute;left:50%;top:45%;width:0;height:0;pointer-events:none;z-index:2}
+.m-flash{position:absolute;left:0;top:0;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,#fff 0 25%,#f5c400 45%,rgba(217,47,42,.7) 70%,transparent 72%)}
+.m-bit{position:absolute;left:0;top:0;width:9px;height:6px;border-radius:2px}.m-bit.rd{border-radius:50%;width:8px;height:8px}
+.m-word{position:absolute;left:0;top:-20px;font:400 34px/1 'Bebas Neue',Impact,sans-serif;color:#f5c400;-webkit-text-stroke:2px #d92f2a;text-shadow:3px 3px 0 #1f1712;white-space:nowrap;letter-spacing:1px}
+@media (prefers-reduced-motion:reduce){.mascota .puff{opacity:.7}.zzz i{opacity:1}.zzz i:nth-child(2){left:9px;top:-8px}.zzz i:nth-child(3){left:18px;top:-18px}}
+.m-still .mascota .puff{opacity:.7}.m-still .zzz i{opacity:1}.m-still .zzz i:nth-child(2){left:9px;top:-8px}.m-still .zzz i:nth-child(3){left:18px;top:-18px}
